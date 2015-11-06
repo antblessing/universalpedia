@@ -49,5 +49,7 @@ group :development, :test do
   gem 'devise'
   
   gem 'bootswatch-rails'
+  
+  gem 'pundit'
 end
 

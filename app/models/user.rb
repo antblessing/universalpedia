@@ -3,4 +3,19 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  before_save { self.role ||= :standard }
+  
+  enum role: [:standard, :premium, :admin]
+  
+  def standard?
+    role == "standard"
+  end
+  
+  def premium?
+    role == "premium"
+  end
+  
+  def admin?
+    role == "admin"
+  end
 end
