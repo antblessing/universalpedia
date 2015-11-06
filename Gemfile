@@ -51,5 +51,7 @@ group :development, :test do
   gem 'bootswatch-rails'
   
   gem 'pundit'
+  
+  gem 'faker'
 end
 
