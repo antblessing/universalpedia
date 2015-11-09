@@ -13,7 +13,7 @@ require 'faker'
       wiki = Wiki.create!(
         :title => Faker::Company.catch_phrase,
         :body => Faker::Company.catch_phrase,
-        :private => random_boolean
+        :private => random_boolean,
         )
     end
 puts "#{User.count} users created!"

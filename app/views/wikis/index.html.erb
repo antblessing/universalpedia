@@ -1,31 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Universal Wikis</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Private</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="progress progress-success">
+  <div class="progress-bar" style="width: 100%"></div>
+</div>
 
-  <tbody>
-    <% @wikis.each do |wiki| %>
-      <tr>
-        <td><%= wiki.title %></td>
-        <td><%= wiki.body %></td>
-        <td><%= wiki.private %></td>
-        <td><%= wiki.user %></td>
-        <td><%= link_to 'Show', wiki %></td>
-        <td><%= link_to 'Edit', edit_wiki_path(wiki) %></td>
-        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% @wikis.each do |wiki| %>
+<table width="600">
+  <tr>
+    <td>Title: <%= wiki.title %></td>
+  </tr>
+  <tr>
+    <td>Body: <%= wiki.body %></td>
+  </tr>
+  <tr>
+    <td>Private: <%= wiki.private %></td>
+  </tr>
+  <tr>
+    <td>User: <%= wiki.user %></td>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <tr>
+        <td><%= link_to 'Show', wiki, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_wiki_path(wiki), class: "btn btn-default btn-xs"  %></td>
+        <td><%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs"  %></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
-<br>
-
-<%= link_to 'New Wiki', new_wiki_path %>
+<table><tr><td height="10"></td></tr></table>
+<% end %>
