@@ -4,7 +4,11 @@ class WikisController < ApplicationController
   # GET /wikis
   # GET /wikis.json
   def index
-    @wikis = Wiki.all
+    if current_user.premium? || current_user.admin?
+      @wikis = Wiki.all
+    else
+      @wikis = Wiki.all.where(private: false)
+    end
   end
 
   # GET /wikis/1

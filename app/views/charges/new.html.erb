@@ -1,5 +1,6 @@
 <%= form_tag charges_path do %>
-  <h4>Click to upgrade to <strong>premium</strong>!</h4>
+  <h4>Click to upgrade to <strong>premium</strong>   and make private wikis!</h4>
   <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
-  <h3>Want to downgrade to standard? <%= link_to 'Downgrade', charges_downgrade_path, :class => 'btn btn-primary', :class => 'btn btn-primary' %></h3>
+  <h3>Want to downgrade to standard?</h3> 
+  <%= link_to 'Downgrade', charges_downgrade_path, :class => 'btn btn-primary', data: { confirm: "Are you sure?" }, :class => 'btn btn-warning' %>
 <% end %>
