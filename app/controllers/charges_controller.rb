@@ -2,7 +2,7 @@ class ChargesController < ApplicationController
   
   class Amount
     def self.default
-      10_00
+      15_00
     end
   end
   
@@ -19,8 +19,9 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
     
-    flash[:notice] = "Thanks for all the money, #{current_user.email}! Feel free to pay me again."
-    redirect_to user_path(current_user)
+    flash[:notice] = "Thanks for supporting the site, #{current_user.email}! Feel free to create private wikis."
+    current_user.premium!
+    redirect_to wikis_path(current_user)
     
     rescue Stripe::CardError => e
       flash[:error] = e.message
@@ -33,5 +34,11 @@ class ChargesController < ApplicationController
       description: "BigMoney Membership - #{current_user.email}",
       amount: Amount.default
     }
+  end
+  
+  def downgrade
+    current_user.standard!
+    current_user.wikis.update_all(private: false)
+    redirect_to root_path
   end
 end

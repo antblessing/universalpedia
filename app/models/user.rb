@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   before_save { self.role ||= :standard }
   
+  has_many :wikis
+  
   enum role: [:standard, :premium, :admin]
   
   def standard?
