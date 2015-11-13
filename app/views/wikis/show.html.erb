@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @wiki.title %>
+  <strong>Title: </strong>
+  <%= markdown_to_html(@wiki.title) %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @wiki.body %>
+  <%= markdown_to_html(@wiki.body) %>
 </p>
 
 <p>
