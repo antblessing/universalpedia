@@ -22,6 +22,19 @@
       <li><%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %></li>
     <% end %>
   </ul>
+  <div class="flash">  
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <% flash[:error] %>
+      </div>
+    <% end %>
+  </div>
 <%= yield %>
 </div>
 </body>
