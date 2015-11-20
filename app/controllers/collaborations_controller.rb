@@ -14,8 +14,8 @@ class CollaborationsController < ApplicationController
   end
 
   def destroy
-    @collaboration = @wiki.collaborations.find(params[:wiki_id])
-    
+    @collaboration = @wiki.collaborations.find(params[:id])
+
     if @collaboration.destroy
       flash[:notice] = "Collaborator has been removed."
       redirect_to wiki_collaborations_path
