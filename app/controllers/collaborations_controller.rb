@@ -14,7 +14,7 @@ class CollaborationsController < ApplicationController
   end
 
   def destroy
-    @collaboration = @wiki.collaborations.find(params[:id])
+    @collaboration = @wiki.collaborations.find_by(user_id: params[:id])
 
     if @collaboration.destroy
       flash[:notice] = "Collaborator has been removed."
@@ -25,7 +25,12 @@ class CollaborationsController < ApplicationController
   end
   
   def index
-    @users = User.all
+    #use devise for this authenticating
+    if @wiki.user_id == current_user.id
+      @users = User.all
+    else
+      redirect_to wikis_path
+    end
   end
   
   def set_wiki
