@@ -8,7 +8,6 @@
   <h4><strong>Title</strong>: <%= wiki.title %></h4>
   <p><strong>Body</strong>: <%= wiki.body %></p>
   <p><%= wiki.private %></p>
-  <p><strong>Author</strong>: <%= wiki.user %></p>
   <%= link_to 'Show', wiki, class: "btn btn-default btn-xs" %>
   <%= link_to 'Edit', edit_wiki_path(wiki), class: "btn btn-default btn-xs"  %>
   <%= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs"  %>
