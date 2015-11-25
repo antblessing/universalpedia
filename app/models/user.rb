@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   before_save { self.role ||= :standard }
   
+  has_many :collaborations
   has_many :wikis
   
   enum role: [:standard, :premium, :admin]
@@ -20,4 +21,8 @@ class User < ActiveRecord::Base
   def admin?
     role == "admin"
   end
+  
+  #def collaborated_on
+    #Collaboration.where(user_id: id)
+  #end
 end
