@@ -31,21 +31,21 @@ gem 'pry'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
- gem 'bootstrap-sass'
+gem 'bootstrap-sass'
 
-  gem 'devise'
+gem 'devise'
 
-  gem 'bootswatch-rails'
+gem 'bootswatch-rails'
 
-  gem 'pundit'
+gem 'pundit'
 
-  gem 'faker'
+gem 'faker'
 
-  gem 'stripe'
+gem 'stripe'
 
-  gem 'figaro', '1.0'
+gem 'figaro', '1.0'
 
-  gem 'redcarpet'
+gem 'redcarpet'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -59,6 +59,4 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 
   gem 'sqlite3'
-
-
 end
