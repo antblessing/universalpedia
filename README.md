@@ -11,7 +11,7 @@ Created during my time in Bloc's Full Stack Web Development track.
 - Uses Device user authorization.
 
 ## Setup:
-- Clone Bloccit repository
+- Clone Universalpedia repository
 - Bundle Install
 - run rake db:create & rake db:migrate
 - Run server with rails s
