@@ -16,3 +16,5 @@ Created during my time in Bloc's Full Stack Web Development track.
 - run rake db:create & rake db:migrate
 - Run server with rails s
 - Navigate to localhost:3000
+
+Deployed on [Heroku](https://infinite-mountain-19093.herokuapp.com)
